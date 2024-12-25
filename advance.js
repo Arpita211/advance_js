@@ -5,3 +5,13 @@ function say_hello(){
 setTimeout(()=>{
 say_hello();
 },4000)
+
+function outer(){
+let counter = 16
+return function(){
+counter++
+return counter
+}
+}
+let solution = outer()
+console.log(solution())
